@@ -1,0 +1,27 @@
+.book-page {
+    text-align:center; 
+    background-color: #fefefe;
+}
+
+.book-page div {
+    text-align:center; 
+    padding: 0.5% 10%;
+}
+
+.book-page .book-intro {
+    text-align: left;
+    padding: 0.5% 10%;
+    background-color: #F1F1F1;
+}
+
+.book-page .book-intro p {
+    padding: 8px 15px;
+}
+
+.book-page img {
+    max-height: 150px;
+    margin-top: 1%;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    border-radius: 150px;
+}

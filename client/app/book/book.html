@@ -1,5 +1,17 @@
 <div ng-include="'components/shell/shell.html'"></div>
 
-<div class="books-list">
-  <h1> id is : <span>{{ message }}</span> </h1>
+<div class="book-page" >
+    <div>
+      <h1>{{book.name}}</h1>
+      <img src="{{book.author.avatar}}">
+      <h3>By {{book.author.name}}</h3>
+      <p>{{book.description}}</p>
+      <p>Categories : </p>
+      <a>{{book.genre.category}}</a>,
+      <a>{{book.genre.name}}</a>
+    </div>
+
+    <div class="book-intro">
+      <p ng-repeat="intro in book.introduction">{{intro.content}}</p>
+    </div>
 </div>
