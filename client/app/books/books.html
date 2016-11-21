@@ -1,0 +1,38 @@
+<div ng-include="'components/shell/shell.html'"></div>
+
+<div class="button-search-bar">
+
+  <div>
+    <p>Find me the best
+      <md-input-container>
+        <md-select ng-model="someModel">
+          <md-option ng-value="category" ng-repeat="opt in categories">{{ opt }}</md-option>
+        </md-select>
+      </md-input-container>
+    </p>
+  </div>
+  <div>
+    <p>Book about
+      <md-input-container>
+        <md-select ng-model="someModel">
+          <md-option ng-value="about" ng-repeat="opt in abouts">{{ opt }}</md-option>
+        </md-select>
+      </md-input-container>
+    </p>
+  </div>
+</div>
+
+<div class="books-list">
+  <div ng-repeat="book in books">
+    <md-card class='book-description'>
+      <img src="{{book.cover}}" class="md-card-image" alt="user avatar">
+      <md-card-content>
+        <h2>{{book.name}}</h2>
+        <p>{{book.description}}</p>
+      </md-card-content>
+      <div class="md-actions" layout="row">
+        <md-button ui-sref="book({id: '{{book.id}}'})">View</md-button>
+      </div>
+    </md-card>
+  </div>
+</div>
