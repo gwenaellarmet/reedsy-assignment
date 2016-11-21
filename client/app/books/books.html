@@ -30,7 +30,8 @@
 
 <div class="books-list"  flex="70" flex-offset="15">
   <div ng-repeat="book in books">
-    <md-card class='book-description'>
+    <book-card book="book"/>
+    <!-- <md-card class='book-description'>
       <img src="{{book.cover}}" class="md-card-image" alt="user avatar">
       <md-card-content>
         <h2>{{book.name}}</h2>
@@ -39,6 +40,6 @@
       <div class="md-actions">
         <md-button ui-sref="book({id: '{{book.id}}'})">View</md-button>
       </div>
-    </md-card>
+    </md-card> -->
   </div>
 </div>

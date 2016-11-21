@@ -30,17 +30,17 @@ angular.module('reedsyAssignmentApp')
     function applyFilters () {
       $scope.books = originBooks;
       
-      if($scope.search != "") {
+      if($scope.search && $scope.search != "") {
         $scope.books = _.filter($scope.books, function(o) {
-          return o.name.includes($scope.search);
+          return o.name.toLowerCase().includes($scope.search.toLowerCase());
         });
       }    
-      if($scope.category != "") {
+      if($scope.category && $scope.category != "") {
         $scope.books = _.filter($scope.books, function(o) {
           return o.genre.category == $scope.category;
         });
       }      
-      if($scope.about != "") {
+      if($scope.about && $scope.about != "") {
         $scope.books = _.filter($scope.books, function(o) {
           return o.genre.name == $scope.about;
         });

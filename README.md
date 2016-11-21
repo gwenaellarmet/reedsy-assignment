@@ -17,9 +17,9 @@ This is a small 2 page SPA, consisting of an index page (list of books) and a sh
 
     - Cover image - DONE
     - Title - DONE
-    - Author - TODO
-    - Votes - TODO
-    - Published date (bonus points for relative time) - TODO
+    - Author - DONE
+    - Votes - DONE
+    - Published date (bonus points for relative time) - DONE
 
 * When a book is clicked it then displays the books show page. - DONE
 

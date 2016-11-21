@@ -1,0 +1,5 @@
+.book-description {
+  width: 250px;
+  transition: all 400ms ease-out 50ms;
+  text-align: center;
+}

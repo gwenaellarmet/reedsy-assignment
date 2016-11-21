@@ -1,0 +1,12 @@
+<md-card class='book-description'>
+  <img src="{{book.cover}}" class="md-card-image" alt="user avatar">
+  <md-card-content>
+    <h2>{{book.name}}</h2>
+    <h4>By {{book.author.name}}</h4>
+    <span>{{book.likes}} likes</span>
+    <span>{{nbDaysSincePublished}} years ago</span>
+  </md-card-content>
+  <div class="md-actions">
+    <md-button ui-sref="book({id: '{{book.id}}'})">View</md-button>
+  </div>
+</md-card>

@@ -13,9 +13,3 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
-.book-description {
-  width: 250px;
-  transition: all 400ms ease-out 50ms;
-}
-
