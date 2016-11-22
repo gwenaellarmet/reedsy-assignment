@@ -5,11 +5,10 @@
 
 .book-page div {
     text-align:center; 
-    padding: 0.5% 10%;
 }
 
 .book-page .book-intro {
-    text-align: left;
+    text-align: justify;
     padding: 0.5% 10%;
     background-color: #F1F1F1;
 }
@@ -18,10 +17,17 @@
     padding: 8px 15px;
 }
 
-.book-page img {
+.book-page .author-profile {
     max-height: 150px;
     margin-top: 1%;
     -webkit-border-radius: 150px;
     -moz-border-radius: 150px;
     border-radius: 150px;
+}
+
+.books-related {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
