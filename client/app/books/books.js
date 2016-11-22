@@ -6,6 +6,10 @@ angular.module('reedsyAssignmentApp')
       .state('books', {
         url: '/books',
         templateUrl: 'app/books/books.html',
-        controller: 'BooksCtrl'
+        controller: 'BooksCtrl',
+        params : {
+            'category' : '',
+            'about' : ''
+        }
       });
   });

@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('reedsyAssignmentApp')
-  .controller('BooksCtrl', function ($scope, $http) {
+  .controller('BooksCtrl', function ($scope, $http, $stateParams) {
 
     var originBooks = [];
 
     $scope.books = [];
-    $scope.category = ""; //contain category choosen by user
-    $scope.about = ""; //contain category choosen by user
+    $scope.category = $stateParams.category || "";
+    $scope.about = $stateParams.about || "";
     $scope.search = "";
     $scope.itemNb = 10;
     $scope.categories = [];
@@ -24,6 +24,10 @@ angular.module('reedsyAssignmentApp')
 
         $scope.categories = _.uniq(_.map(_.map(books, 'genre'), 'category'));
         $scope.abouts     = _.uniq(_.map(_.map(books, 'genre'), 'name'));
+
+        if ( $scope.category != "" || $scope.about != "") {
+          applyFilters();
+        }
       });
     }
 

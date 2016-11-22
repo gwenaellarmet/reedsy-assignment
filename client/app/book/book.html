@@ -7,8 +7,8 @@
       <h3>By {{book.author.name}}</h3>
       <p>{{book.description}}</p>
       <p>Categories : </p>
-      <a>{{book.genre.category}}</a>,
-      <a>{{book.genre.name}}</a>
+      <a ui-sref="books({ category: book.genre.category })">{{book.genre.category}}</a>,
+      <a ui-sref="books({ about: book.genre.name })">{{book.genre.name}}</a>
     </div>
 
     <div class="book-intro">
