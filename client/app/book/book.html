@@ -6,15 +6,14 @@
       <img class="author-profile" src="{{book.author.avatar}}">
       <h3>By {{book.author.name}}</h3>
       <p>{{book.description}}</p>
-      <p>Categories : </p>
-      <a ui-sref="books({ category: book.genre.category })">{{book.genre.category}}</a>,
-      <a ui-sref="books({ about: book.genre.name })">{{book.genre.name}}</a>
+      <md-button class="md-primary" ui-sref="books({ category: book.genre.category })">{{book.genre.category}}</md-button>
+      <md-button class="md-primary" ui-sref="books({ about: book.genre.name })">{{book.genre.name}}</md-button>
     </div>
-
+    <md-divider></md-divider>
     <div class="book-intro">
       <p ng-repeat="intro in book.introduction">{{intro.content}}</p>
     </div>
-
+    <md-divider></md-divider>
     <div class="books-related"  flex="70" flex-offset="15">
         <div ng-repeat="book in relatedBooks">
             <book-card book="book"/>

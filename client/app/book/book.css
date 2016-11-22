@@ -9,12 +9,13 @@
 
 .book-page .book-intro {
     text-align: justify;
-    padding: 0.5% 10%;
+    padding: 0 10%;
     background-color: #F1F1F1;
 }
 
 .book-page .book-intro p {
-    padding: 8px 15px;
+    padding: 1em 2em;
+    margin: 0;
 }
 
 .book-page .author-profile {
@@ -26,7 +27,7 @@
 }
 
 .books-related {
-    padding: 0;
+    padding: 1% 0;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

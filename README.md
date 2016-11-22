@@ -1,17 +1,12 @@
-## Discover Section Challenge
+## Install the application
 
-Create a SPA, that displays the books available in the `books.json` file in this Gist.
-An example wireframe is also attached to this Gist, but please feel free to deviate and be as creative as you like.
+To install the application
 
-### Requirements
+- npm install && bower install
 
-This is a small 2 page SPA, consisting of an index page (list of books) and a show page (detailed view of each book).
+### Run the application
 
-* Your implementation should be provided as a public Github repository, with instructions on how to run the code locally.
+To run the application in dev mode :
 
-### What we'll be looking at
+- grunt serve
 
-* The structure, modularity and overall quality of any code and markup.
-* The suitability of the chosen technologies
-* Documentation
-* Creativity

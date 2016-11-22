@@ -1,5 +1,15 @@
 .book-description {
   width: 250px;
-  transition: all 400ms ease-out 50ms;
   text-align: center;
+  transform: scale(0);
+  transition: all .3s ease-out;
+}
+
+.show {
+  transform: scale(1);
+  transition: all .3s ease-out;
+}
+
+.book-card-infos {
+    background-color: #f1f1f1;
 }

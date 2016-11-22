@@ -1,12 +1,16 @@
-<md-card class='book-description'>
+<md-card class='book-description' ng-class="classes">
   <img src="{{book.cover}}" class="md-card-image">
   <md-card-content>
-    <h2>{{book.name}}</h2>
-    <h4>By {{book.author.name}}</h4>
-    <span>{{book.likes}} likes</span>
-    <span>{{nbDaysSincePublished}} years ago</span>
+    <md-card class="book-card-infos">
+      <h2>{{book.name}}</h2>
+      <h4>By {{book.author.name}}</h4>
+    </md-card>
   </md-card-content>
+  <div layout="row">
+    <span flex="50">{{book.likes}} likes</span>
+    <span flex="50">{{nbDaysSincePublished}} years ago</span>
+  </div>
   <div class="md-actions">
-    <md-button ui-sref="book({id: '{{book.id}}'})">View</md-button>
+    <md-button class="md-primary" ui-sref="book({id: '{{book.id}}'})">View</md-button>
   </div>
 </md-card>

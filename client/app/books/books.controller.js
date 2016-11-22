@@ -3,23 +3,22 @@
 angular.module('reedsyAssignmentApp')
   .controller('BooksCtrl', function ($scope, $http, $stateParams) {
 
-    var originBooks = [];
-    var itemPerPage = 10;
     var nbPage, i;
+    var itemPerPage   = 8;
+    var originBooks   = [];
 
-    $scope.books = [];
-    $scope.category = $stateParams.category || "";
-    $scope.about = $stateParams.about || "";
-    $scope.search = "";
+    $scope.search     = "";
+    $scope.category   = $stateParams.category || "";
+    $scope.about      = $stateParams.about || "";
     $scope.categories = [];
-    $scope.abouts = [];
+    $scope.books      = [];
+    $scope.abouts     = [];
+    $scope.pages      = [];
     $scope.datas;
-
     $scope.currentPage;
-    $scope.pages = [];
 
     $scope.applyFilters = applyFilters;
-    $scope.changePage = changePage;
+    $scope.changePage   = changePage;
 
     activate();
 
@@ -30,8 +29,6 @@ angular.module('reedsyAssignmentApp')
 
         $scope.categories = _.uniq(_.map(_.map(books, 'genre'), 'category'));
         $scope.abouts     = _.uniq(_.map(_.map(books, 'genre'), 'name'));
-
-
 
         if ( $scope.category != "" || $scope.about != "") {
           applyFilters();
@@ -52,7 +49,6 @@ angular.module('reedsyAssignmentApp')
     function changePage(page) {
       $scope.currentPage = page;
       $scope.datas = $scope.books.slice(($scope.currentPage - 1)* itemPerPage, $scope.currentPage * itemPerPage);
-      console.log('$scope.datas ', $scope.datas );
     }
 
     function applyFilters () {

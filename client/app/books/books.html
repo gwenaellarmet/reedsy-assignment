@@ -1,36 +1,33 @@
 <div ng-include="'components/shell/shell.html'"></div>
 
-<div class="button-search-bar" flex="50" flex-offset="25" >
-  <div>
-    <p>Find me the best
+<div class="page-header">
+  <div class="button-search-bar" flex="50" flex-offset="25" >
+    <div>
       <md-input-container>
-        <md-select ng-model="category" ng-change="applyFilters()">
+        <md-select ng-model="category" placeholder="Find me the best" ng-change="applyFilters()">
           <md-option ng-value=""></md-option>
           <md-option ng-repeat="categ in categories" ng-value="categ">{{ categ }}</md-option>
         </md-select>
       </md-input-container>
-    </p>
-  </div>
-  <div>
-    <p>Book about
+    </div>
+    <div>
       <md-input-container>
-        <md-select ng-model="about" ng-change="applyFilters()">
+        <md-select ng-model="about" placeholder="Book about" ng-change="applyFilters()">
           <md-option ng-value=""></md-option>
           <md-option ng-repeat="about in abouts" ng-value="about">{{ about }}</md-option>
         </md-select>
       </md-input-container>
-    </p>
+    </div>
+    <div>
+      <md-input-container>
+        <input type="text" placeholder="Search books" ng-model="search" ng-change="applyFilters()">
+      </md-input-container>
+    </div>
   </div>
-  <div>
-    <md-input-container>
-      <input type="text" placeholder="Search books" ng-model="search" ng-change="applyFilters()">
-    </md-input-container>
-  </div>
+  <md-toolbar layout="row" class="books-pagination">
+    <md-button ng-repeat="page in pages" ng-class="currentPage == page ? 'md-raised' : ''" ng-click="changePage(page)">{{page}}</md-button>
+  </md-toolbar>
 </div>
-<md-toolbar layout="row" class="books-pagination">
-  <md-button ng-repeat="page in pages" ng-class="currentPage == page ? 'md-raised' : ''" ng-click="changePage(page)">{{page}}</md-button>
-</md-toolbar>
-
 
 <div class="books-list"  flex="70" flex-offset="15">
   <div ng-repeat="book in datas">
