@@ -56,7 +56,8 @@ angular.module('reedsyAssignmentApp')
       
       if($scope.search && $scope.search != "") {
         $scope.books = _.filter($scope.books, function(o) {
-          return o.name.toLowerCase().includes($scope.search.toLowerCase());
+          return o.name.toLowerCase().includes($scope.search.toLowerCase())
+              || o.author.name.toLowerCase().includes($scope.search.toLowerCase());
         });
       }    
       if($scope.category && $scope.category != "") {
