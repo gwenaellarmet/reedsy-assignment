@@ -4,16 +4,22 @@ angular.module('reedsyAssignmentApp')
   .controller('BooksCtrl', function ($scope, $http, $stateParams) {
 
     var originBooks = [];
+    var itemPerPage = 10;
+    var nbPage, i;
 
     $scope.books = [];
     $scope.category = $stateParams.category || "";
     $scope.about = $stateParams.about || "";
     $scope.search = "";
-    $scope.itemNb = 10;
     $scope.categories = [];
     $scope.abouts = [];
+    $scope.datas;
+
+    $scope.currentPage;
+    $scope.pages = [];
 
     $scope.applyFilters = applyFilters;
+    $scope.changePage = changePage;
 
     activate();
 
@@ -25,10 +31,28 @@ angular.module('reedsyAssignmentApp')
         $scope.categories = _.uniq(_.map(_.map(books, 'genre'), 'category'));
         $scope.abouts     = _.uniq(_.map(_.map(books, 'genre'), 'name'));
 
+
+
         if ( $scope.category != "" || $scope.about != "") {
           applyFilters();
         }
+        getNbPages();
+        changePage(1);
       });
+    }
+
+    function getNbPages() {      
+      nbPage = Math.ceil($scope.books.length / itemPerPage);
+      $scope.pages = [];
+      for(i = 0; i < nbPage; i++) {
+        $scope.pages.push(i+1);
+      }
+    }
+
+    function changePage(page) {
+      $scope.currentPage = page;
+      $scope.datas = $scope.books.slice(($scope.currentPage - 1)* itemPerPage, $scope.currentPage * itemPerPage);
+      console.log('$scope.datas ', $scope.datas );
     }
 
     function applyFilters () {
@@ -51,5 +75,7 @@ angular.module('reedsyAssignmentApp')
       }
 
       $scope.books = _.sortBy($scope.books, 'name');
+      getNbPages();
+      changePage(1);
     }
   });

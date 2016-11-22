@@ -13,3 +13,9 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.books-pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

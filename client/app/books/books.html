@@ -27,9 +27,13 @@
     </md-input-container>
   </div>
 </div>
+<md-toolbar layout="row" class="books-pagination">
+  <md-button ng-repeat="page in pages" ng-class="currentPage == page ? 'md-raised' : ''" ng-click="changePage(page)">{{page}}</md-button>
+</md-toolbar>
+
 
 <div class="books-list"  flex="70" flex-offset="15">
-  <div ng-repeat="book in books">
+  <div ng-repeat="book in datas">
     <book-card book="book"/>
   </div>
 </div>
